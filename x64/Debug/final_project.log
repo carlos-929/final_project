@@ -1,0 +1,33 @@
+﻿  CppCLR_WinFormsProject.cpp
+C:\Users\jd_po\source\repos\final_project\final_project\Form1.h(610,74): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file '/CppCLR_WinFormsProject.cpp')
+  
+C:\Users\jd_po\source\repos\final_project\final_project\Form1.h(620,74): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file '/CppCLR_WinFormsProject.cpp')
+  
+C:\Users\jd_po\source\repos\final_project\final_project\Form1.h(657,78): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file '/CppCLR_WinFormsProject.cpp')
+  
+C:\Users\jd_po\source\repos\final_project\final_project\Form1.h(662,78): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file '/CppCLR_WinFormsProject.cpp')
+  
+C:\Users\jd_po\source\repos\final_project\final_project\Form1.h(669,78): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file '/CppCLR_WinFormsProject.cpp')
+  
+C:\Users\jd_po\source\repos\final_project\final_project\Form1.h(673,78): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file '/CppCLR_WinFormsProject.cpp')
+  
+C:\Users\jd_po\source\repos\final_project\final_project\Form1.h(683,78): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file '/CppCLR_WinFormsProject.cpp')
+  
+C:\Users\jd_po\source\repos\final_project\final_project\Form1.h(687,78): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file '/CppCLR_WinFormsProject.cpp')
+  
+C:\Users\jd_po\source\repos\final_project\final_project\Form1.h(694,78): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file '/CppCLR_WinFormsProject.cpp')
+  
+C:\Users\jd_po\source\repos\final_project\final_project\Form1.h(698,78): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file '/CppCLR_WinFormsProject.cpp')
+  
+  AssemblyInfo.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  final_project.vcxproj -> C:\Users\jd_po\source\repos\final_project\x64\Debug\final_project.exe
