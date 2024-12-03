@@ -61,7 +61,7 @@ namespace CppCLRWinFormsProject {
             movie_averages = new std::vector<Movie_Average>();
 
 
-            // Initialize member variables
+           
             isQuickSortSelected = false;
             isMergeSortSelected = false;
             isAscending = true;
@@ -77,7 +77,7 @@ namespace CppCLRWinFormsProject {
             this->analyticsButton->Click += gcnew System::EventHandler(this, &Form1::analyticsButton_Click);
             this->sortCriteriaComboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Form1::sortCriteriaComboBox_SelectedIndexChanged);
 
-            // Set default selections
+            
             this->sortCriteriaComboBox->SelectedIndex = 0; // Default to Sort by Average
         }
 
@@ -113,7 +113,7 @@ namespace CppCLRWinFormsProject {
         DataGridView^ dataGridView1;
         ComboBox^ sortCriteriaComboBox;
 
-        // En la inicialización de los controles
+        // En la inicializaciÃ³n de los controles
         DataGridView^ analyticsGridView;
 
        
@@ -310,7 +310,7 @@ namespace CppCLRWinFormsProject {
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
             this->ResumeLayout(false);
 
-            // Dentro de InitializeComponent()
+            
             this->analyticsGridView = (gcnew System::Windows::Forms::DataGridView());
             this->analyticsGridView->AllowUserToAddRows = false;
             this->analyticsGridView->AllowUserToDeleteRows = false;
@@ -328,13 +328,13 @@ namespace CppCLRWinFormsProject {
 #pragma endregion
 
     private:
-        // Event handler for Load Data button
+        
         System::Void loadDataButton_Click(System::Object^ sender, System::EventArgs^ e) {
 
-            // Show the progress bar
+           
             this->loadDataProgressBar->Visible = true;
 
-            // Read movies.csv
+         
             std::ifstream file("movies.csv");
 
             if (!file.is_open())
@@ -350,7 +350,7 @@ namespace CppCLRWinFormsProject {
             std::string line;
             movies->clear();
 
-            // Skip header line
+         
             std::getline(file, line);
 
             auto start1 = std::chrono::high_resolution_clock::now();
@@ -380,7 +380,7 @@ namespace CppCLRWinFormsProject {
 
             file.close();
 
-            // Read ratings.csv
+           
             std::ifstream file2("ratings.csv");
 
             if (!file2.is_open())
@@ -397,7 +397,7 @@ namespace CppCLRWinFormsProject {
             ratings->clear();
             movie_averages->clear();
 
-            // Skip header line
+            
             std::getline(file2, lineRatings);
 
             while (std::getline(file2, lineRatings))
@@ -405,12 +405,12 @@ namespace CppCLRWinFormsProject {
                 std::stringstream ss2(lineRatings);
                 std::string userID, movie_ID, rating_s;
 
-                // Parse CSV fields
+                
                 std::getline(ss2, userID, ',');
                 std::getline(ss2, movie_ID, ',');
                 std::getline(ss2, rating_s, ',');
 
-                // Create a Rating object and add it to the vector
+                
                 Rating rating;
                 rating.userID = std::stoi(userID);
                 rating.movieId = std::stoi(movie_ID);
@@ -461,12 +461,12 @@ namespace CppCLRWinFormsProject {
             updateDataGridView();
         }
 
-        // Event handler for Quick Sort button
+     
         System::Void quickSortButton_Click(System::Object^ sender, System::EventArgs^ e) {
             isQuickSortSelected = true;
             isMergeSortSelected = false;
 
-            // Update button appearance
+         
             quickSortButton->BackColor = System::Drawing::Color::LightBlue;
             mergeSortButton->BackColor = System::Drawing::SystemColors::Control;
 
@@ -478,12 +478,12 @@ namespace CppCLRWinFormsProject {
             }
         }
 
-        // Event handler for Merge Sort button
+       
         System::Void mergeSortButton_Click(System::Object^ sender, System::EventArgs^ e) {
             isQuickSortSelected = false;
             isMergeSortSelected = true;
 
-            // Update button appearance
+          
             mergeSortButton->BackColor = System::Drawing::Color::LightBlue;
             quickSortButton->BackColor = System::Drawing::SystemColors::Control;
 
@@ -495,15 +495,15 @@ namespace CppCLRWinFormsProject {
             }
         }
 
-        // Event handler for Ascendent button
+       
         System::Void ascendentButton_Click(System::Object^ sender, System::EventArgs^ e) {
             isAscending = true;
 
-            // Update button appearance
+        
             ascendentButton->BackColor = System::Drawing::Color::LightBlue;
             descendentButton->BackColor = System::Drawing::SystemColors::Control;
 
-            // Perform sorting if data is loaded
+          
             if (!movie_averages->empty())
             {
                 sortData();
@@ -515,11 +515,11 @@ namespace CppCLRWinFormsProject {
         System::Void descendentButton_Click(System::Object^ sender, System::EventArgs^ e) {
             isAscending = false;
 
-            // Update button appearance
+
             descendentButton->BackColor = System::Drawing::Color::LightBlue;
             ascendentButton->BackColor = System::Drawing::SystemColors::Control;
 
-            // Perform sorting if data is loaded
+        
             if (!movie_averages->empty())
             {
                 sortData();
@@ -527,7 +527,7 @@ namespace CppCLRWinFormsProject {
             }
         }
 
-        // Event handler for sorting criteria ComboBox
+     
         System::Void sortCriteriaComboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
             if (this->sortCriteriaComboBox->SelectedIndex == 0)
             {
@@ -538,7 +538,7 @@ namespace CppCLRWinFormsProject {
                 isSortedByAverage = false;
             }
 
-            // Perform sorting if data is loaded
+        
             if (!movie_averages->empty())
             {
                 sortData();
@@ -546,38 +546,38 @@ namespace CppCLRWinFormsProject {
             }
         }
 
-        // Event handler for Reset button
+    
         System::Void resetButton_Click(System::Object^ sender, System::EventArgs^ e) {
-            // Reset all selections and data
+          
             isQuickSortSelected = false;
             isMergeSortSelected = false;
             isAscending = true;
             isSortedByAverage = true;
 
-            // Reset button appearances
+         
             quickSortButton->BackColor = System::Drawing::SystemColors::Control;
             mergeSortButton->BackColor = System::Drawing::SystemColors::Control;
             ascendentButton->BackColor = System::Drawing::SystemColors::Control;
             descendentButton->BackColor = System::Drawing::SystemColors::Control;
 
-            // Clear data
+           
             movies->clear();
             ratings->clear();
             movie_averages->clear();
 
-            // Clear DataGridView
+           
             this->dataGridView1->Rows->Clear();
         }
 
      
 
-        // Method to update DataGridView
+       
         void updateDataGridView()
         {
-            // Clear existing rows
+           
             this->dataGridView1->Rows->Clear();
 
-            // Add rows to DataGridView
+         
             for (const Movie_Average& mov_ave : *movie_averages)
             {
                 String^ title = gcnew String(mov_ave.title.c_str());
@@ -595,7 +595,7 @@ namespace CppCLRWinFormsProject {
 
             std::vector<SortAnalytics> analytics;
 
-            // Configuraciones de prueba
+           
             bool orders[] = { true, false }; // Ascending, Descending
             bool criteria[] = { true, false }; // Sort by Average, Sort by Title
 
@@ -627,7 +627,7 @@ namespace CppCLRWinFormsProject {
                 }
             }
 
-            // Mostrar resultados en el DataGridView
+         
             this->analyticsGridView->Rows->Clear();
             for (const SortAnalytics& result : analytics) {
                 String^ algorithm = gcnew String(result.algorithm.c_str());
@@ -640,7 +640,7 @@ namespace CppCLRWinFormsProject {
         }
 
 
-        // Method to sort data
+   
         void sortData()
         {
             if (movie_averages->empty())
@@ -712,7 +712,7 @@ namespace CppCLRWinFormsProject {
             MessageBox::Show(message);
         }
 
-        // Quick Sort functions with comparator
+       
         int partition(std::vector<Movie_Average>& movies, int low, int high, bool (*comparator)(const Movie_Average&, const Movie_Average&)) {
             Movie_Average pivot = movies[high];
             int i = low - 1;
